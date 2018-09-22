@@ -9,7 +9,7 @@ import env from './.env';
 export const environment = {
   production: false,
   version: env.npm_package_version + '-dev',
-  serverUrl: '/api',
+  serverUrl: 'https://gearprice-api.joaosousa.pro',
   defaultLanguage: 'en-US',
   supportedLanguages: [
     'en-US',

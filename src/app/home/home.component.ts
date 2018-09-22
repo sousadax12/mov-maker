@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
-
-import { QuoteService } from './quote.service';
+import {Component, OnInit} from '@angular/core';
+import {finalize} from 'rxjs/operators';
+import {GearbestAPIService} from '@app/home/gearbestAPI.service';
+import {ProductURLGB} from '@app/home/productURLGB.interface';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +12,20 @@ export class HomeComponent implements OnInit {
 
   quote: string;
   isLoading: boolean;
+  linkToGenerate: string;
+  generatedURL: ProductURLGB;
 
-  constructor(private quoteService: QuoteService) { }
+  constructor(private gearbestAPIService: GearbestAPIService) {
+  }
 
   ngOnInit() {
-    this.isLoading = true;
-    this.quoteService.getRandomQuote({ category: 'dev' })
-      .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((quote: string) => { this.quote = quote; });
+
+  }
+
+  public async submit(url: string) {
+    const [urlProduct] = await this.gearbestAPIService.getGenerateURL([url], '').toPromise();
+    this.generatedURL = urlProduct;
+    console.log(this.generatedURL);
   }
 
 }

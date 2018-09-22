@@ -1,10 +1,14 @@
-<div class="container-fluid">
-  <div class="jumbotron text-center">
+<div class="container-fluid" style="height: 100%;">
+  <div class=" text-center">
     <h1>
-      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo"/>
-      <span translate>Hello world !</span>
+      <img class="logo" src="assets/logo.svg" alt="angular logo"/>
     </h1>
     <app-loader [isLoading]="isLoading"></app-loader>
-    <q [hidden]="isLoading">{{quote}}</q>
+    <h3 [hidden]="isLoading">Ajuda o Movimento Maker Portugal!</h3>
+    <q>Cola o teu link do Gearbest e gera o teu novo link.</q>
+  </div>
+  <div class=" text-center input-cont">
+    <input type="text" ([ngModel])="linkToGenerate" class="form-control" placeholder="Cola o teu URL aqui...">
+    <button type="submit" (click)="submit(linkToGenerate)" class="btn btn-primary my-1">Gerar</button>
   </div>
 </div>
