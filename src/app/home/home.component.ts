@@ -22,10 +22,24 @@ export class HomeComponent implements OnInit {
 
   }
 
-  public async submit(url: string) {
-    const [urlProduct] = await this.gearbestAPIService.getGenerateURL([url], '').toPromise();
+  public copy(val: string) {
+    let selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
+
+  public async submit() {
+    console.log(this.linkToGenerate);
+    const [urlProduct] = await this.gearbestAPIService.getGenerateURL([this.linkToGenerate], '').toPromise();
     this.generatedURL = urlProduct;
-    console.log(this.generatedURL);
   }
 
 }

@@ -7,6 +7,8 @@ import {SharedModule} from '@app/shared';
 import {HomeRoutingModule} from './home-routing.module';
 import {HomeComponent} from './home.component';
 import {GearbestAPIService} from '@app/home/gearbestAPI.service';
+import {FormControl, FormsModule} from '@angular/forms';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import {GearbestAPIService} from '@app/home/gearbestAPI.service';
     TranslateModule,
     CoreModule,
     SharedModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule,
+    AngularFontAwesomeModule
   ],
   declarations: [
     HomeComponent

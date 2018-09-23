@@ -17,15 +17,45 @@ q {
 
   .input-cont {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 40px auto 0px auto;
     display: flex;
     input {
       padding: 30px;
-      height:62px
+      height: 62px
     }
-    button{
+    button {
       height: 62px;
       margin: 0 !important;
+    }
+  }
+
+  .copy-url {
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+
+    &.hide {
+      opacity: 0 !important;
+    }
+
+    input {
+      color: white;
+      background-color: transparent;
+      border: none;
+      resize: none;
+      white-space: nowrap;
+      overflow-x: scroll;
+      &:focus {
+        outline: 0;
+      }
+    }
+    button {
+      max-width: 100px;
+      margin: 20px auto;
     }
   }
 

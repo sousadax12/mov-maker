@@ -8,7 +8,13 @@
     <q>Cola o teu link do Gearbest e gera o teu novo link.</q>
   </div>
   <div class=" text-center input-cont">
-    <input type="text" ([ngModel])="linkToGenerate" class="form-control" placeholder="Cola o teu URL aqui...">
-    <button type="submit" (click)="submit(linkToGenerate)" class="btn btn-primary my-1">Gerar</button>
+    <input type="text" [(ngModel)]="linkToGenerate" class="form-control" placeholder="Cola o teu URL aqui...">
+    <button type="submit" (click)="submit()" class="btn btn-primary my-1">Gerar</button>
+  </div>
+  <div class=" text-center copy-url" [ngClass]="{'hide':(!generatedURL)}">
+    <input *ngIf="generatedURL" [value]="generatedURL.promotion_link" #userinput name="" id="">
+
+    <button *ngIf="generatedURL" href="" class="btn btn-primary" (click)="copy(generatedURL.promotion_link)">Copiar
+    </button>
   </div>
 </div>
