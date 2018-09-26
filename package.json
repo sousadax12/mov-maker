@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "build": "npm run env -s && ng build --prod",
-    "serve": "http-server --name maker -- ./dist -p 8044 -d false",
+    "serve": "http-server  ./dist -p 8044 -d false",
     "start": "npm run env -s && ng serve --aot",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
     "test": "npm run env -s && ng test",
