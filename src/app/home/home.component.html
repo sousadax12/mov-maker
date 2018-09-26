@@ -9,7 +9,7 @@
   </div>
   <div class=" text-center input-cont">
     <input type="text" [(ngModel)]="linkToGenerate" class="form-control" placeholder="Cola o teu URL aqui...">
-    <button type="submit" (click)="submit()" class="btn btn-primary my-1">Gerar</button>
+    <button type="submit" (click)="submit()" class="btn btn-primary my-1">Gerar e Comprar</button>
   </div>
   <div class=" text-center copy-url" [ngClass]="{'hide':(!generatedURL)}">
     <input *ngIf="generatedURL" [value]="generatedURL.promotion_link" #userinput name="" id="">

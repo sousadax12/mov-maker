@@ -7,7 +7,7 @@ import {Shell} from '@app/shell/shell.service';
 
 const routes: Routes = [
   Shell.childRoutes([
-    {path: '', component: HomeComponent, data: {title: extract('Home')}}
+    {path: '', component: HomeComponent}
   ])
 ];
 
