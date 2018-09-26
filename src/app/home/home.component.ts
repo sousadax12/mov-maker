@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     console.log(this.linkToGenerate);
     const [urlProduct] = await this.gearbestAPIService.getGenerateURL([this.linkToGenerate], '').toPromise();
     this.generatedURL = urlProduct;
-    window.open(this.generatedURL.promotion_link);
+    const importantStuff = window.open(this.generatedURL.promotion_link, '_blank');
   }
 
 }
